@@ -5,6 +5,9 @@ body
 	color: white;
 	font-family: 'Dancing Script', cursive;
 	font-weight: bold;
+
+	animation-name: opacityGlobal;
+	animation-duration: 2000ms;
 }
 
 header
@@ -18,10 +21,16 @@ header
 	display: flex;
 	flex-flow: row wrap;
 	font-size: 20px;
-
+	z-index: 3;
 	position: relative;
 	animation-name: slidein;
-	animation-duration: 1s;
+	animation-duration: 1500ms;
+}
+
+@keyframes opacityGlobal
+{
+	from {filter: opacity(20%);}
+	to {filter: opacity(100%);}
 }
 
 @keyframes slidein
@@ -29,16 +38,17 @@ header
 	0%
 	{
 		top: 100%;
-		filter: opacity(0%);
+		filter: opacity(40%);
 	}
 	45%
 	{
-		top: 10px;
-		filter: opacity(90%);
+		top: 0px;
+		filter: opacity(80%);
 	}
 	80%
 	{
 		top: 100px;
+		filter: opacity(100%);
 	}
 	100%
 	{
