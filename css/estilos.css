@@ -137,13 +137,12 @@ header .menu a
 		margin: 0 auto;
 		/*Se utiliza un largo del 90% para que las filas de fotos no tapen el fondo de
 		color verde*/
-		width: 90%;
-		max-height: 330px;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		/*Se utiliza esta instrucción para tener un espaciado entre las imágenes una vez
 		que se muestran en forma de fila*/
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 
 	section .imagenFila img
