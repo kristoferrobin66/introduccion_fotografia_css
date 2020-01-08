@@ -1,0 +1,253 @@
+body
+{
+	margin: 20px;
+	background-color: #02010a;
+	color: white;
+	font-family: 'Dancing Script', cursive;
+	font-weight: bold;
+}
+
+header
+{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #5b7989;
+	text-shadow: 2px 2px #02010a;
+	border-radius: 10px 10px 5px 5px;
+	padding: 15px 0;
+	display: flex;
+	flex-flow: row wrap;
+	font-size: 20px;
+
+	position: relative;
+	animation-name: slidein;
+	animation-duration: 1s;
+}
+
+@keyframes slidein
+{
+	0%
+	{
+		top: 100%;
+		filter: opacity(0%);
+	}
+	45%
+	{
+		top: 10px;
+		filter: opacity(90%);
+	}
+	80%
+	{
+		top: 100px;
+	}
+	100%
+	{
+		top: 0px;
+	}
+}
+
+
+header .menu a
+	{
+		color: white;
+		text-decoration: none;
+		padding: 0 3%;
+	}
+
+/*
+	Aquí se hace uso de los media queries
+*/
+@media screen and (max-width: 900px)
+{
+	header h1
+	{
+		margin: 0 auto;
+		text-align: center;
+		display: inline-flex;
+	}
+
+	section .imagenSecundaria
+	{
+		/*Esta instrucción coloca los flex-objects en una columna en lugar de una fila*/
+		flex-direction: column;
+	}
+
+	section .imagenFila
+	{
+		margin: 0 10%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer
+	{
+		display: inline-flex;
+		flex-flow: column;
+		padding-bottom: 20px;
+	}
+	
+	footer section
+	{	
+		margin: 10px auto;
+		display: inline-flex;
+		flex-flow: column;
+	}
+}
+
+/*
+	En el caso de esta condicional se especifica que el dispositivo debe
+	de ser de 901px de largo o mayor para poder ejecutarse, es decir, esta
+	es la versión desktop
+*/
+@media screen and (min-width: 901px)
+{
+	header h1
+	{
+		width: 70%;
+		text-indent: 10%;
+		margin: auto 0;
+	}
+
+	header .menu
+	{
+		padding: 25px 0;
+		width: 30%;
+	}
+
+	section .imagenSecundaria
+	{
+		/*Esta instrucción coloca los flex-objects en una fila en lugar de una columna*/
+		flex-direction: row;
+	}
+
+	/*Las filas a mostrar en la galería*/
+	section .imagenFila
+	{
+		margin: 0 auto;
+		/*Se utiliza un largo del 90% para que las filas de fotos no tapen el fondo de
+		color verde*/
+		width: 90%;
+		max-height: 330px;
+		display: flex;
+		flex-direction: row;
+		/*Se utiliza esta instrucción para tener un espaciado entre las imágenes una vez
+		que se muestran en forma de fila*/
+		justify-content: space-between;
+	}
+
+	section .imagenFila img
+	{
+		width: 32%;
+	}
+
+	footer
+	{
+		height: 200px;
+	}
+}
+
+footer
+{
+	width: 80%;
+	border-radius: 3px 3px 10px 10px;
+	background-color: #C6d5c5;
+	margin: 0 10%;
+	font-size: 20px;
+	text-align: center;
+	display: inline-flex;
+	text-shadow: 1px 1px #02010a;
+
+}
+
+footer section
+{
+	display: flex;
+	flex-flow: column;
+}
+
+/*Esto le dará a todas las secciones un margen centrado y las delimitará
+  a solo un 70% de largo*/
+section
+{
+	text-align: center;
+	margin: 1% auto;
+	width: 70%;
+}
+
+section article
+{
+	border-radius: 10px;
+}
+
+/*Todas las imágenes contarán con estas características*/
+section img
+{
+	width: 90%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	width: 80%;
+	border: 2px solid white;
+}
+
+section .imagenCentral
+{
+	background: #82c3a6;
+}
+
+section .imagenSecundaria
+{
+	display: flex;
+	text-align: center;
+	padding-top: 10px;
+	background-color: #d5c75f;
+}
+
+section .imagenSecundaria article figcaption
+{
+	position: relative;
+	bottom: 10px;
+}
+
+section .imagenSecundaria .imagenIzquierda img
+{
+	transition: transform .8s ease-in-out;
+}
+
+section .imagenSecundaria .imagenIzquierda img:hover
+{
+    transform:rotate(10deg);
+}
+
+section .imagenSecundaria .imagenDerecha img
+{
+	transition: transform 1s;
+}
+
+section .imagenSecundaria .imagenDerecha img:hover
+{
+	transform: translate(20px, -5px);
+}
+
+.galeria
+{
+	background-color: #82c3a6;
+	border-radius: 10px;
+}
+
+
+.galeria .imagenFila #imagenBlur
+{
+	filter: blur(10px);
+}
+
+.galeria .imagenFila #imagenSepia
+{
+	filter: sepia(90%);
+}
+
+.galeria .imagenFila .imagenGris
+{
+	filter: grayscale(100%);
+}
